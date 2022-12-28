@@ -1,24 +1,17 @@
 // Load Node modules
 var express = require('express');
 var path = require('path');
-const ejs = require('ejs');
+const PORT = 8080;
 // Initialise Express
 var app = express();
 console.log(__dirname)
 // Render static files
-app.use(express.static(path.join(__dirname + 'views'), {
-    index: false,
-    immutable: true,
-    cacheControl: true,
-    maxAge: "30d"
-}));
-// Set the view engine to ejs
-app.set('view engine', 'ejs');
+app.use(express.static(path.join(__dirname + '/public')));
 // Port website will run on
-app.listen(8080);
+app.listen(PORT, () => console.log(`Server listening on port: ${PORT}`));
 
 // *** GET Routes - display pages ***
 // Root Route
 app.get('/', function (req, res) {
-    res.render('./pages/index');
+    res.sendFile(path.join(__dirname + '/index.html'));
 });

@@ -13,13 +13,13 @@ const asmr_pageturning_link = "https://assets.mixkit.co/sfx/preview/mixkit-brows
 window.addEventListener('load', playAudio, false);
 
 $(document).ready(function() {
-        $('#toggle').bind("click", function() {
-          if ($(this).attr("class") == "play")
-             $(this).attr("class", "pause");
-          else
-             $(this).attr("class", "play");
-        });
-      });
+    $('#toggle').bind("click", function() {
+        if ($(this).attr("class") == "play")
+            $(this).attr("class", "pause");
+        else
+            $(this).attr("class", "play");
+    });
+});
 
 function playAudio() {
     nature1 = document.getElementById('nature1');
@@ -49,9 +49,15 @@ function playAmbient() {
             ambient_audio.currentTime = 0;
         }
     } else if (document.getElementById('ambient2').checked) {
+        if (typeof ambient_audio !== 'undefined') {
+            ambient_audio.pause();
+        }
         ambient_audio = new Audio(ambient_asia_link);
         ambient_audio.play();
     } else if (document.getElementById('ambient3').checked) {
+        if (typeof ambient_audio !== 'undefined') {
+            ambient_audio.pause();
+        }
         ambient_audio = new Audio(ambient_africa_link);
         ambient_audio.play();
     }
@@ -85,7 +91,7 @@ function playAmbient() {
     const updateVolume = function(x, vol) {
         let volume = $('.volumeAmbient');
         let percentage;
-        //if only volume have specificed
+        //if only volume have specified
         //then direct update volume
         if (vol) {
             percentage = vol * 100;
@@ -265,4 +271,3 @@ function playASMR() {
 
     };
 }
-
