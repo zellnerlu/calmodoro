@@ -58,16 +58,12 @@
                                 <tbody>
                                     <tr>
                                         <th scope="row">
-                                            <div class="dropdown">
-                                                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                                                    None
-                                                </button>
-                                                <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton1">
-                                                    <li><a class="dropdown-item btn-outline-light">None</a></li>
-                                                    <li><a class="dropdown-item btn-outline-light">Asian</a></li>
-                                                    <li><a class="dropdown-item btn-outline-light">African</a></li>
-                                                </ul>
-                                            </div>
+                                            <select id="comboA" onchange="getComboA(this)">
+                                                <option value="">Select combo</option>
+                                                <option value="Value1">Text1</option>
+                                                <option value="Value2">Text2</option>
+                                                <option value="Value3">Text3</option>
+                                            </select>
                                             <div class="btn-group-vertical" role="group" aria-label="Basic radio toggle button group">
                                                 <input type="radio" class="btn-check" name="ambient" id="ambient1" autocomplete="off" checked>
                                                 <label class="btn btn-outline-light" for="ambient1">None</label>
