@@ -1,7 +1,7 @@
 /* VOLUME BAR CSS */
 
 /* volume bar */
- .volumeAmbient, .volumeNature, .volumeASMR {
+ .jp-volume-bar .volumeAmbient, .volumeNature, .volumeASMR {
     position:relative;
     cursor:pointer;
     width:100%;
@@ -11,7 +11,7 @@
     margin-right:10px;
     background-color:#888;
 }
-.volumeBarAmbient, .volumeBarNature, .volumeBarASMR {
+.jp-volume-bar-value .volumeBarAmbient, .volumeBarNature, .volumeBarASMR {
     display:block;
     height:20px;
     position:absolute;
