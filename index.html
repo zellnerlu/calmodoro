@@ -11,6 +11,7 @@
     <link rel="stylesheet" type="text/css" href="./css/activation-button.css">
     <link rel="stylesheet" type="text/css" href="./css/audio-player.css">
     <link rel="stylesheet" type="text/css" href="./css/meditation.css">
+    <link rel="stylesheet" type="text/css" href="./css/selector.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 </head>
 
@@ -19,12 +20,12 @@
         <div class="blob-wrapper">
             <div onclick="openNav()" class="blob"></div>
         </div>
-        <div id="meditation-support">
-            <span>Breathe in...</span>
+        <!--<div id="meditation-support">
+        <span>Breathe in...</span>
         </div>
         <div id="creator-area">
             <span id="creator">Image by bla on unsplash.com</span>
-        </div>
+        </div>-->
 
         <div id="myNav" class="overlay">
             <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
@@ -58,19 +59,12 @@
                                 <tbody>
                                     <tr>
                                         <th scope="row">
-                                            <select id="comboA" onchange="getComboA(this)">
-                                                <option value="">Select combo</option>
-                                                <option value="Value1">Text1</option>
-                                                <option value="Value2">Text2</option>
-                                                <option value="Value3">Text3</option>
-                                            </select>
-                                            <div class="btn-group-vertical" role="group" aria-label="Basic radio toggle button group">
-                                                <input type="radio" class="btn-check" name="ambient" id="ambient1" autocomplete="off" checked>
-                                                <label class="btn btn-outline-light" for="ambient1">None</label>
-                                                <input type="radio" class="btn-check" name="ambient" id="ambient2" autocomplete="off">
-                                                <label class="btn btn-outline-light" for="ambient2">Asian</label>
-                                                <input type="radio" class="btn-check" name="ambient" id="ambient3" autocomplete="off">
-                                                <label class="btn btn-outline-light" for="ambient3">African</label>
+                                            <div class="dropdown dropdown-dark">
+                                                <select id="ambient-selector" class="dropdown-select" autocomplete="off" onchange="playMyAudio('ambient', this.value)">
+                                                    <option value="None" selected="selected">None</option>
+                                                    <option value="asian">Asian</option>
+                                                    <option value="african">African</option>
+                                                </select>
                                             </div>
                                         </th>
                                         <td>
@@ -90,13 +84,12 @@
                                 <tbody>
                                     <tr>
                                         <th scope="row">
-                                            <div class="btn-group-vertical" role="group" aria-label="Basic radio toggle button group">
-                                                <input type="radio" class="btn-check" name="nature" id="nature1" autocomplete="off" checked>
-                                                <label class="btn btn-outline-light" for="nature1">None</label>
-                                                <input type="radio" class="btn-check" name="nature" id="nature2" autocomplete="off">
-                                                <label class="btn btn-outline-light" for="nature2">Birds</label>
-                                                <input type="radio" class="btn-check" name="nature" id="nature3" autocomplete="off">
-                                                <label class="btn btn-outline-light" for="nature3">Rain Drops</label>
+                                            <div class="dropdown dropdown-dark">
+                                                <select id="nature-selector" class="dropdown-select" autocomplete="off" onchange="playMyAudio('nature', this.value)">
+                                                    <option value="None" selected="selected">None</option>
+                                                    <option value="birds">Birds</option>
+                                                    <option value="rain">Rain</option>
+                                                </select>
                                             </div>
                                         </th>
                                         <td>
@@ -116,13 +109,12 @@
                                 <tbody>
                                     <tr>
                                         <th scope="row">
-                                            <div class="btn-group-vertical" role="group" aria-label="Basic radio toggle button group">
-                                                <input type="radio" class="btn-check" name="asmr" id="asmr1" autocomplete="off" checked>
-                                                <label class="btn btn-outline-light" for="asmr1">None</label>
-                                                <input type="radio" class="btn-check" name="asmr" id="asmr2" autocomplete="off">
-                                                <label class="btn btn-outline-light" for="asmr2">Crinkles</label>
-                                                <input type="radio" class="btn-check" name="asmr" id="asmr3" autocomplete="off">
-                                                <label class="btn btn-outline-light" for="asmr3">Page Turning</label>
+                                            <div class="dropdown dropdown-dark">
+                                                <select id="asmr-selector" class="dropdown-select" autocomplete="off" onchange="playMyAudio('asmr', this.value)">
+                                                    <option value="None" selected="selected">None</option>
+                                                    <option value="crinkles">Crinkles</option>
+                                                    <option value="pageturning">Page Turning</option>
+                                                </select>
                                             </div>
                                         </th>
                                         <td>
@@ -134,14 +126,14 @@
                         </div>
                     </div>
                     <hr />
-                    <div class="meditation-check">
-                        <div class="form-check form-switch">
-                            <input class="form-check-input" type="checkbox" id="meditation-switch">
-                            <label class="form-check-label" for="meditation-switch">Request meditation support</label>
-                        </div>
+                    <!--<div class="meditation-check">
+                    <div class="form-check form-switch">
+                        <input class="form-check-input" type="checkbox" id="meditation-switch">
+                        <label class="form-check-label" for="meditation-switch">Meditation support</label>
                     </div>
+                </div>
+                <hr />-->
                     <!--###########################################-->
-                    <hr />
                     <div class="modal fade" id="collapseImpressum" tabindex="-1" role="dialog" aria-labelledby="collapseImpressumTitle" aria-hidden="true">
                         <div class="modal-dialog" role="document">
                             <div class="modal-content">
@@ -184,6 +176,24 @@
                         </div>
                     </div>
                     <ul class="list-inline list-inline-sm list-inline-md footer">
+                        <div id="donate-button-container">
+                            <div id="donate-button" class="btn"></div>
+                            <script src="https://www.paypalobjects.com/donate/sdk/donate-sdk.js" charset="UTF-8"></script>
+                            <script>
+                                PayPal.Donation.Button({
+                                    env: 'production',
+                                    hosted_button_id: '3TEU7UF6RGANY',
+                                    image: {
+                                        src: 'https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif',
+                                        alt: 'Donate with PayPal button',
+                                        title: 'PayPal - The safer, easier way to pay online!',
+                                    }
+                                }).render('#donate-button');
+                            </script>
+                        </div>
+                        <button type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#staticBackdropAttribution">
+                            Attribution
+                        </button>
                         <button type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#staticBackdropImpressum">
                             Impressum
                         </button>
@@ -196,7 +206,32 @@
                 </div>
             </div>
         </div>
+        <script src="./js/theme.js"></script>
         <!-- Modal -->
+        <div class="modal fade" id="staticBackdropAttribution" data-bs-backdrop="static" data-bs-keyboard="false" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="staticBackdropLabel">Attribution</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div id="attribution-text" class="modal-body">
+                        <script>
+                            for (const image in images) {
+                                let ptag = document.createElement('p');
+                                ptag.classList.add('images-attribution');
+                                console.log(image)
+                                ptag.innerHTML = `${images[image].title}: ${images[image].attribution}`;
+                                document.getElementById('attribution-text').appendChild(ptag);
+                            }
+                        </script>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
         <div class="modal fade" id="staticBackdropImpressum" data-bs-backdrop="static" data-bs-keyboard="false" aria-labelledby="staticBackdropLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
@@ -230,11 +265,13 @@
             </div>
         </div>
     </div>
+    
+
     <!-- ########################## JS ########################## -->
     <script src="./js/main.js"></script>
     <script src="./js/audio-player.js"></script>
     <script src="./js/meditation-support.js"></script>
-    <script src="./js/theme.js"></script>
+    
 
 </body>
 

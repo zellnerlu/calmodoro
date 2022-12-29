@@ -1,14 +1,19 @@
-const beachImageCreator= 'Photo by <a href="https://unsplash.com/@joshua_j_woroniecki?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Joshua Woroniecki</a> on <a href="https://unsplash.com/s/photos/calm-ball?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>'
-const forestImageCreator = 'Photo by <a href="https://unsplash.com/@sebastian_unrau?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Sebastian Unrau</a> on <a href="https://unsplash.com/s/photos/forest?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>'
+const images = {
+    beach: {
+        title: "Beach",
+        attribution: 'Photo by <a href="https://unsplash.com/@joshua_j_woroniecki?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Joshua Woroniecki</a> on <a href="https://unsplash.com/s/photos/calm-ball?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>',
+    },
+    forest: {
+        title: "Forest",
+        attribution: 'Photo by <a href="https://unsplash.com/@sebastian_unrau?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Sebastian Unrau</a> on <a href="https://unsplash.com/s/photos/forest?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>',
+    }
+}
 
 function changeBg(theme) {
-    let imgPath = `/images/backgrounds/${theme}/img-0.jpg`;
+    //let imgPath = `/images/backgrounds/${theme}/img-0.jpg`;
+    let imgPath = `https://images.unsplash.com/photo-1550728041-b3dfaa66940a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80`;
     document.getElementById("main-bg").style.backgroundImage = "url(" + imgPath + ")";
-    if (theme == "beach"){
-    	document.getElementById("creator").innerHTML = beachImageCreator;
-    } else if (theme == "forest"){
-    	document.getElementById("creator").innerHTML = forestImageCreator;
-    }
+    //document.getElementById("creator").innerHTML = images[theme].attribution;
 }
 
 function changeBgLoop(theme) {
