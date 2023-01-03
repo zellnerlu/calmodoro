@@ -1,17 +1,29 @@
 const images = {
     beach: {
         title: "Beach",
-        attribution: 'Photo by <a href="https://unsplash.com/@joshua_j_woroniecki?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Joshua Woroniecki</a> on <a href="https://unsplash.com/s/photos/calm-ball?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>',
+        path: "beach",
+        attribution: 'Photo by <a href="https://unsplash.com/@quinoal?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Quino Al</a> on <a href="https://unsplash.com/images/nature/beach?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a> ',
     },
     forest: {
         title: "Forest",
-        attribution: 'Photo by <a href="https://unsplash.com/@sebastian_unrau?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Sebastian Unrau</a> on <a href="https://unsplash.com/s/photos/forest?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>',
+        path: "forest",
+        attribution: 'Photo by <a href="https://unsplash.com/@sakulich?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Sergej A</a> on <a href="https://unsplash.com/photos/-heLWtuAN3c?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>',
+    },
+    river: {
+        title: "River",
+        path: "river",
+        attribution: 'Photo by <a href="https://unsplash.com/@akaunas?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Sasha Kaunas</a> on <a href="https://unsplash.com/photos/b_wN4QemTzU?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a> ',
+    },
+    sky: {
+        title: "Sky",
+        path: "sky",
+        attribution: 'Photo by <a href="https://unsplash.com/@jdiegoph?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Diego PH</a> on <a href="https://unsplash.com/wallpapers/nature/sky?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a> ',
     }
 }
 
-function changeBg(theme) {
-    //let imgPath = `/images/backgrounds/${theme}/img-0.jpg`;
-    let imgPath = `https://images.unsplash.com/photo-1550728041-b3dfaa66940a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80`;
+function changeBg(title) {
+    let imgPath = `/images/backgrounds/` + images[title].path + `.jpg`;
+    console.log(imgPath);
     document.getElementById("main-bg").style.backgroundImage = "url(" + imgPath + ")";
     //document.getElementById("creator").innerHTML = images[theme].attribution;
 }

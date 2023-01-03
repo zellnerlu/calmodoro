@@ -4,27 +4,59 @@ let asmr_audio = null
 
 const bib = {
     ambient: {
-        asian: {
-            mp3: "https://audio-previews.elements.envatousercontent.com/files/229831170/preview.mp3?response-content-disposition=attachment%3B+filename%3D%229GAQVEN-asian.mp3%22",
+        motivation: {
+            title: "Motivation",
+            mp3: "https://cdn.pixabay.com/download/audio/2021/11/26/audio_e20882e29d.mp3?filename=acoustic-motivation-11290.mp3",
+            attribution: 'Music by <a href="https://pixabay.com/de/users/coma-media-24399569/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=music&amp;utm_content=11290">Coma-Media</a> from <a href="https://pixabay.com//?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=music&amp;utm_content=11290">Pixabay</a>'
         },
-        african: {
-            mp3: "https://audio-previews.elements.envatousercontent.com/files/304187853/preview.mp3?response-content-disposition=attachment%3B+filename%3D%228L4HDXW-africa-logo.mp3%22",
+        piano: {
+            title: "Piano",
+            mp3: "https://cdn.pixabay.com/audio/2021/10/25/audio_05570f2464.mp3",
+            attribution: 'Music by <a href="https://pixabay.com/de/users/daddy_s_music-22836301/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=music&amp;utm_content=9835">Daddy_s_Music</a> from <a href="https://pixabay.com/music//?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=music&amp;utm_content=9835">Pixabay</a>'
+        },
+        meditation: {
+            title: "Meditation",
+            mp3: "https://cdn.pixabay.com/audio/2021/08/14/audio_ffd25fe177.mp3",
+            attribution: 'Music by <a href="https://pixabay.com/de/users/natureseye-18615106/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=music&amp;utm_content=7359">NaturesEye</a> from <a href="https://pixabay.com//?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=music&amp;utm_content=7359">Pixabay</a>'
         }
     },
     nature: {
         birds: {
-            mp3: "https://assets.mixkit.co/sfx/preview/mixkit-natural-ambience-with-flowing-water-and-birds-61.mp3",
+            title: "European Forest Birds",
+            mp3: "https://assets.mixkit.co/sfx/preview/mixkit-european-forest-ambience-1213.mp3",
+            attribution: 'mixkit.co'
         },
         rain: {
+            title: "Rain",
             mp3: "https://assets.mixkit.co/sfx/preview/mixkit-long-rain-ambience-1247.mp3",
+            attribution: 'mixkit.co'
+        },
+        wind: {
+            title: "Cold Winds",
+            mp3: "https://assets.mixkit.co/sfx/preview/mixkit-blizzard-cold-winds-1153.mp3",
+            attribution: 'mixkit.co'
+        },
+        waves: {
+            title: "Waves",
+            mp3: "https://assets.mixkit.co/sfx/preview/mixkit-sea-waves-loop-1196.mp3",
+            attribution: 'mixkit.co'
         }
     },
     asmr: {
-        crinkles: {
-            mp3: "https://audio-previews.elements.envatousercontent.com/files/292964110/preview.mp3?response-content-disposition=attachment%3B+filename%3D%22HJKQQJG-christmas-present-plastic-wrap-crinkle-movement-4.mp3%22",
+        keyboardtyping: {
+            title: "Keyboard Typing",
+            mp3: "https://assets.mixkit.co/sfx/preview/mixkit-laptop-keyboard-typing-sequence-2537.mp3",
+            attribution: 'mixkit.co'
         },
         pageturning: {
-            mp3: "https://assets.mixkit.co/sfx/preview/mixkit-browsing-book-by-pages-1099.mp3",
+            title: "Page Turning",
+            mp3: "https://assets.mixkit.co/sfx/preview/mixkit-turning-the-newspaper-big-page-1097.mp3",
+            attribution: 'mixkit.co'
+        },
+        urban: {
+            title: "Urban",
+            mp3: "https://assets.mixkit.co/sfx/preview/mixkit-urban-ambient-sound-2465.mp3",
+            attribution: 'mixkit.co'
         }
     }
 }
@@ -65,6 +97,10 @@ function playMyAudio(cat, s) {
         }
         if (sound != null) {
             ambient_audio = new Audio(sound.mp3);
+            ambient_audio.addEventListener('ended', function () {
+                this.currentTime = 0;
+                this.play();
+            }, false);
             playAmbient();
             ambient_audio.play();
         }
@@ -75,6 +111,10 @@ function playMyAudio(cat, s) {
         }
         if (sound != null) {
             nature_audio = new Audio(sound.mp3);
+            nature_audio.addEventListener('ended', function () {
+                this.currentTime = 0;
+                this.play();
+            }, false);
             playNature();
             nature_audio.play();
         }
@@ -85,6 +125,10 @@ function playMyAudio(cat, s) {
         }
         if (sound != null) {
             asmr_audio = new Audio(sound.mp3);
+            asmr_audio.addEventListener('ended', function () {
+                this.currentTime = 0;
+                this.play();
+            }, false);
             playASMR();
             asmr_audio.play();
         }
