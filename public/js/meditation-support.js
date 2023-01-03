@@ -7,28 +7,44 @@ var changetext_timeout = null;
 var text_timeout = null;
 var fading_timeout = null;
 
+
 const input = document.getElementById('meditation-switch');
-input.addEventListener('change', function() {
-    if (this.checked) {
-        document.getElementById("meditation-support").style.display = "block";
-        timeout = setTimeout(changeText, SHOWN_TIME);
-    } else {
-        $("#meditation-support").stop(true, true);
-        document.getElementById("meditation-support").style.display = "none";
-    }
+const meditationSupportContainer = document.getElementById("meditation-support");
+
+input.addEventListener('change', function () {
+    meditationSupport(false);
 });
 
-function changeText() {
-    $("#meditation-support").fadeOut(FADING_OUT_TIME, function() {
-        text_timeout = setTimeout(function() {
-            if (document.getElementById("meditation-support").innerHTML == "Breathe out...") {
-                document.getElementById("meditation-support").innerHTML = "Breathe in...";
-            } else {
-                document.getElementById("meditation-support").innerHTML = "Breathe out...";
-            }
-            $("#meditation-support").fadeIn(FADING_IN_TIME, function() {
-                fading_timeout = setTimeout(changeText, SHOWN_TIME);
-            });
-        }, HIDDEN_TIME);
-    });
+function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
 }
+
+function changeText(out) {
+    console.log("Changing text");
+    medText = document.getElementById('meditation-text');
+    console.log(medText.textContent);
+    if (out == false) {
+        medText.innerHTML = "Breathe out...";
+    } else {
+        medText.innerHTML = "Breathe in...";
+    }
+    
+}
+
+function meditationSupport(out) {
+    console.log("Toggled med sup");
+    if (input.checked) {
+        console.log("Its checked");
+        $("#meditation-support").fadeIn(1000).delay(2500).fadeOut(1000).delay(2500).promise().done(function () {
+            out = out ? false : true;
+            changeText(out);
+            meditationSupport(out);
+        });
+    } else {
+        console.log("Its not checked anymore");
+        $("#meditation-support").fadeOut(1000);
+        changeText(true);
+    }
+    
+}
+

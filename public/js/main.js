@@ -37,3 +37,6 @@ function closeFullscreen() {
         document.msExitFullscreen();
     }
 }
+
+
+

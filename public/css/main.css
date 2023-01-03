@@ -24,7 +24,6 @@ html {
 }
 
 #meditation-support{
-  display: none;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -35,13 +34,8 @@ html {
   border: 3px solid rgb(206,130,80);
   border-radius: 5px;
   padding: 20px;
-  background-color: rgba(222,170,136,.4);
-}
-
-#creator-area{
-  position: absolute;
-  bottom: 0;
-  right: 0;
+  background-color: rgba(222,170,136, 0.4);
+  display: none;
 }
 
 .table {
@@ -50,8 +44,11 @@ html {
 }
 
 .meditation-check {
-  font-size: 20px;
-  padding: 30px;
+    font-size: 20px;
+    width: 25%;
+    padding-left: 30px;
+    margin: 0 auto;
+    /*border: 1px solid red;*/
 }
 
 .test {
