@@ -20,10 +20,8 @@ function sleep(ms) {
 }
 
 function changeText(out) {
-    console.log("Changing text");
     medText = document.getElementById('meditation-text');
-    console.log(medText.textContent);
-    if (out == false) {
+    if (!out) {
         medText.innerHTML = "Breathe out...";
     } else {
         medText.innerHTML = "Breathe in...";
@@ -32,19 +30,12 @@ function changeText(out) {
 }
 
 function meditationSupport(out) {
-    console.log("Toggled med sup");
     if (input.checked) {
-        console.log("Its checked");
-        $("#meditation-support").fadeIn(1000).delay(2500).fadeOut(1000).delay(2500).promise().done(function () {
-            out = out ? false : true;
+        $("#meditation-support").fadeIn(1500).delay(2000).fadeOut(1500).delay(2000).promise().done(function () {
             changeText(out);
+            out = out ? false : true;
             meditationSupport(out);
         });
-    } else {
-        console.log("Its not checked anymore");
-        $("#meditation-support").fadeOut(1000);
-        changeText(true);
     }
-    
 }
 
