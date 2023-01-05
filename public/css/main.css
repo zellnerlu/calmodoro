@@ -59,6 +59,30 @@ html {
     width: 200px;
 }
 
+.form-check-input:focus ~ .form-check-label::before {
+    border-color: red !important;
+    box-shadow: 0 0 0 0.2rem rgba(255, 47, 69, 0.25) !important;
+}
+
+.form-check-input:checked ~ .form-check-label::before {
+    border-color: red !important;
+    background-color: red !important;
+}
+
+.form-check-input:active ~ .form-check-label::before {
+    background-color: red !important;
+    border-color: red !important;
+}
+
+.form-check-input:focus:not(:checked) ~ .form-check-label::before {
+    border-color: red !important;
+}
+
+.custom-control-input-green:not(:disabled):active ~ .custom-control-label::before {
+    background-color: red !important;
+    border-color: red !important;
+}
+
 /*.content-wrapper {
     width: 100%;
     margin: auto;

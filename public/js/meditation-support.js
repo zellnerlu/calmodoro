@@ -36,6 +36,12 @@ function meditationSupport(out) {
             out = out ? false : true;
             meditationSupport(out);
         });
+    } else {
+        $("#meditation-support").stop(true, true).promise().done(function () {
+            meditationSupportContainer.style.display = "none";
+            changeText(true);
+        });
+        
     }
 }
 
