@@ -178,7 +178,7 @@ html {
 }
 
 /* When the height of the screen is less than 450 pixels, change the font-size of the links and position the close button again, so they don't overlap */
-@media screen and (max-height: 450px) {
+@media screen and (max-width: 412px) {
     .overlay a {
         font-size: 20px;
     }
@@ -187,5 +187,11 @@ html {
         font-size: 40px;
         top: 15px;
         right: 35px;
+    }
+}
+
+@media screen and (max-width: 1400px) {
+    .card {
+        margin-bottom: 4px;
     }
 }
