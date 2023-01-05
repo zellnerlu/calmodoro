@@ -10,6 +10,7 @@ var fading_timeout = null;
 
 const input = document.getElementById('meditation-switch');
 const meditationSupportContainer = document.getElementById("meditation-support");
+input.checked = false;
 
 input.addEventListener('change', function () {
     meditationSupport(false);
