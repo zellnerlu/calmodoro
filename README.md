@@ -1,2 +1,2 @@
-# calmify
-Progressive web app for meditation purposes
+# Calmodoro
+Web app for focusing, meditating, ...
