@@ -1,7 +1,7 @@
 // Load Node modules
 var express = require('express');
 var path = require('path');
-const port = process.env.PORT || 3000
+const PORT = process.env.PORT || 3000
 // Initialise Express
 var app = express();
 console.log(__dirname)
