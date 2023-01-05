@@ -17,6 +17,26 @@ html {
     background-size: cover;
 }
 
+#pomodoro-timer-wrapper {
+    position: fixed;
+    left: 50%;
+    bottom: 20px;
+    transform: translate(-50%, -50%);
+    margin: 0 auto;
+    font-size: x-large;
+    font-weight: bold;
+    text-align: center;
+    background-color: rgba(25,25,25,0.5);
+    border: 1px solid lightgray;
+    border-radius: 15px;
+    padding: 10px;
+    display: none;
+}
+
+#pomodoro-timer {
+    color: rgba(220,220,220,1.0);
+}
+
 .donate-button-wrapper {
     position: absolute;
     left: auto;
