@@ -139,10 +139,33 @@ html {
     background-color: rgba(0, 0, 0, 0.5);
     /* Black w/opacity */
     overflow-x: hidden;
+    overflow-y: scroll;
     /* Disable horizontal scroll */
     transition: 0.5s;
     /* 0.5 second transition effect to slide in or slide down the overlay (height or width, depending on reveal) */
 }
+
+/* custom scrollbar */
+::-webkit-scrollbar {
+    width: 20px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #a8bbbf;
+    border-radius: 20px;
+    border: 6px solid transparent;
+    background-clip: content-box;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: #a8bbbf;
+}
+
+
 
 /* Position the content inside the overlay */
 .overlay-content {
