@@ -26,6 +26,11 @@ const bib = {
             mp3: "https://assets.mixkit.co/sfx/preview/mixkit-european-forest-ambience-1213.mp3",
             attribution: 'mixkit.co'
         },
+        owl: {
+            title: "Owl in a forst",
+            mp3: "https://assets.mixkit.co/sfx/preview/mixkit-owl-in-a-forest-2466.mp3",
+            attribution: 'mixkit.co'
+        },
         rain: {
             title: "Rain",
             mp3: "https://assets.mixkit.co/sfx/preview/mixkit-long-rain-ambience-1247.mp3",
