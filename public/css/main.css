@@ -218,8 +218,8 @@ html {
 
     .overlay .closebtn {
         font-size: 40px;
-        top: 5px;
-        right: 35px;
+        top: -5px;
+        right: 25px;
     }
     
     .btn-footer {
