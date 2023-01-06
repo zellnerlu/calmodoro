@@ -23,7 +23,6 @@ const images = {
 
 function changeBg(title) {
     let imgPath = `/images/backgrounds/` + images[title].path + `.jpg`;
-    console.log(imgPath);
     document.getElementById("main-bg").style.backgroundImage = "url(" + imgPath + ")";
     //document.getElementById("creator").innerHTML = images[theme].attribution;
 }
@@ -32,7 +31,6 @@ function changeBgLoop(theme) {
     let num = 0;
     setInterval(() => {
         let imgPath = `/images/backgrounds/${theme}/img-${num}.jpg`;
-        console.log(imgPath);
         document.getElementById("main-bg").style.backgroundImage = "url(" + imgPath + ")";
         num++; //switch to the next image
         num = num % 2; // assume you have 2 images only

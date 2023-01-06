@@ -69,11 +69,8 @@ const bib = {
 function findSound(cat, s) {
     for (const key in bib) {
         if (cat == key) {
-            console.log("Found key");
             for (const sound in bib[key]) {
-                console.log(sound, s)
                 if (s == sound) {
-                    console.log("Found sound " + sound);
                     return { category: cat, sound: sound, mp3: bib[key][sound].mp3 };
                 }
             }
@@ -94,7 +91,6 @@ $(document).ready(function() {
 
 function playMyAudio(cat, s) {
     sound = findSound(cat, s);
-    console.log(sound);
     if (cat == "ambient") {
         if (ambient_audio != null | sound == null) {
             ambient_audio.pause();

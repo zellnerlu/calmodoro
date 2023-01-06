@@ -4,11 +4,10 @@ var path = require('path');
 const PORT = process.env.PORT || 3000
 // Initialise Express
 var app = express();
-console.log(__dirname)
 // Render static files
 app.use(express.static(path.join(__dirname + '/public')));
 // Port website will run on
-app.listen(PORT, () => console.log(`Server listening on port: ${PORT}`));
+app.listen(PORT);
 
 // *** GET Routes - display pages ***
 // Root Route

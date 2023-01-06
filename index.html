@@ -210,7 +210,6 @@
                             for (const image in images) {
                                 let ptag = document.createElement('p');
                                 ptag.classList.add('images-attribution');
-                                console.log(image)
                                 ptag.innerHTML = `${images[image].title}: ${images[image].attribution}`;
                                 document.getElementById('attribution-text').appendChild(ptag);
                             }
@@ -223,7 +222,6 @@
                             for (const audio in bib["ambient"]) {
                                 let ptag = document.createElement('p');
                                 ptag.classList.add('audios-attribution');
-                                console.log(audio)
                                 ptag.innerHTML = `${bib["ambient"][audio].title}: ${bib["ambient"][audio].attribution}`;
                                 document.getElementById('attribution-text').appendChild(ptag);
                             }
@@ -234,7 +232,6 @@
                             for (const audio in bib["nature"]) {
                                 let ptag = document.createElement('p');
                                 ptag.classList.add('audios-attribution');
-                                console.log(audio)
                                 ptag.innerHTML = `${bib["nature"][audio].title}: ${bib["nature"][audio].attribution}`;
                                 document.getElementById('attribution-text').appendChild(ptag);
                             }
@@ -245,7 +242,6 @@
                             for (const audio in bib["asmr"]) {
                                 let ptag = document.createElement('p');
                                 ptag.classList.add('audios-attribution');
-                                console.log(audio)
                                 ptag.innerHTML = `${bib["asmr"][audio].title}: ${bib["asmr"][audio].attribution}`;
                                 document.getElementById('attribution-text').appendChild(ptag);
                             }
