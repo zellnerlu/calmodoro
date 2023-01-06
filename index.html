@@ -113,17 +113,20 @@
                             </div>
                         </div>
                         <hr />
-                        <div class="meditation-check">
-                            <div class="form-check form-switch">
-                                <input class="form-check-input" type="checkbox" id="meditation-switch">
-                                <label class="form-check-label" for="meditation-switch">Meditation support</label>
+                        <div class="row justify-content-center">
+                            <div class="col-sm-4 col-lg-2">
+                                <div class="form-check form-switch">
+                                    <input class="form-check-input" type="checkbox" id="meditation-switch">
+                                    <label class="form-check-label" id="meditation-support-label" for="meditation-switch">Meditation Support</label>
+                                </div>
+                            </div>
+                            <div class="col-sm-auto col-lg-auto">
+                                <p>
+                                    <button type="button" class="btn btn-dark" onclick="openFullscreen();">Enjoy in Fullscreen Mode</button>
+                                    <span>(</span><button type="button" class="btn btn-dark" onclick="closeFullscreen();">Close</button><span>)</span>
+                                </p>
                             </div>
                         </div>
-                        <hr />
-                        <p>
-                            <button type="button" class="btn btn-dark" onclick="openFullscreen();">Enjoy in Fullscreen Mode</button>
-                            <span>(</span><button type="button" class="btn btn-dark" onclick="closeFullscreen();">Close</button><span>)</span>
-                        </p>
                     </div>
                     <!--###########################################-->
                     <div class="modal fade" id="collapseImpressum" tabindex="-1" role="dialog" aria-labelledby="collapseImpressumTitle" aria-hidden="true">

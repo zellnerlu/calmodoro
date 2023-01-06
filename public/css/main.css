@@ -61,11 +61,8 @@ html {
     margin: auto;
 }
 
-.meditation-check {
-    font-size: 20px;
-    width: 25%;
-    padding-left: 30px;
-    margin: 0 auto;
+#meditation-support-label {
+    font-size: 18px;
 }
 
 .test {
@@ -147,7 +144,7 @@ html {
 
 /* custom scrollbar */
 ::-webkit-scrollbar {
-    width: 20px;
+    width: 15px;
 }
 
 ::-webkit-scrollbar-track {
@@ -155,7 +152,7 @@ html {
 }
 
 ::-webkit-scrollbar-thumb {
-    background-color: #a8bbbf;
+    background-color: #202428;
     border-radius: 20px;
     border: 6px solid transparent;
     background-clip: content-box;
@@ -211,15 +208,15 @@ html {
  * change the font-size of the links and position the close button again, 
  * so they don't overlap 
 */
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 800px) {
     .overlay a {
         font-size: 20px;
     }
 
     .overlay .closebtn {
         font-size: 40px;
-        top: -5px;
-        right: 25px;
+        top: 5px;
+        right: 35px;
     }
     
     .btn-footer {
