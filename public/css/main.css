@@ -5,7 +5,7 @@ html {
 }
 
 .footer {
-    /*padding: 35px;*/
+    padding: 35px;
     text-align: right;
 }
 
@@ -148,7 +148,7 @@ html {
 .overlay-content {
     position: relative;
     top: 7%;
-    /* 25% from the top */
+    /* 7% from the top */
     width: 100%;
     /* 100% width */
     text-align: center;
