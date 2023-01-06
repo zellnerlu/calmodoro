@@ -179,27 +179,25 @@
                             </button>
                             <!--<li class="list-inline-item"><button type="button" class="btn btn-light" data-bs-toggle="collapse" href="#collapsePrivacy" role="button" aria-expanded="false" aria-controls="collapsePrivacy">Send me a coffee</button></li>-->
                         </ul>
-                        <!--<div id="donate-button-container">
-        <div class="donate-button-wrapper">
-            <span>Consider donating if you like <i class="bi bi-cup-hot"></i> as much as I do :)</span>
-            <div id="donate-button" class="btn"></div>
-        </div>
-        <script src="https://www.paypalobjects.com/donate/sdk/donate-sdk.js" charset="UTF-8"></script>
-        <script>
-            PayPal.Donation.Button({
-                env: 'production',
-                hosted_button_id: '3TEU7UF6RGANY',
-                image: {
-                    src: 'https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif',
-                    alt: 'Donate with PayPal button',
-                    title: 'PayPal - The safer, easier way to pay online!',
-                }
-            }).render('#donate-button');
-        </script>
-    </div>-->
-                        <!-- Button trigger modal -->
-                    </div>
-
+                        <div class="donate-button-wrapper">
+                            <span>Please consider donating if you would<br />like to use this app frequently.</span>
+                            <div id="donate-button-container">
+                                <div id="donate-button"></div>
+                                <script src="https://www.paypalobjects.com/donate/sdk/donate-sdk.js" charset="UTF-8"></script>
+                                <script>
+                                    PayPal.Donation.Button({
+                                        env: 'production',
+                                        hosted_button_id: '3TEU7UF6RGANY',
+                                        image: {
+                                            src: 'https://pics.paypal.com/00/s/OWQ0NDc5ZTEtOTc1Mi00MDVjLWEyZTAtYjUwMmIxMjZmZTdl/file.PNG',
+                                            alt: 'Donate with PayPal button',
+                                            title: 'PayPal - The safer, easier way to pay online!',
+                                        }
+                                    }).render('#donate-button');
+                                </script>
+                            </div>
+    <!-- Button trigger modal -->
+                        </div>
                     </div>
         </div>
         <script src="./js/theme.js"></script>

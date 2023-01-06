@@ -20,7 +20,12 @@ html {
 .donate-button-wrapper {
     position: absolute;
     left: auto;
-    margin-top: -90px;
+    margin-top: -130px;
+}
+
+#donate-button {
+    margin-top: 4px;
+    height: 2em;
 }
 
 .form-check-input:checked {
