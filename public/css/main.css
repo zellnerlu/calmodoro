@@ -186,14 +186,14 @@ html {
  * change the font-size of the links and position the close button again, 
  * so they don't overlap 
 */
-@media screen and (max-width: 412px) {
+@media screen and (max-width: 768px) {
     .overlay a {
         font-size: 20px;
     }
 
     .overlay .closebtn {
         font-size: 40px;
-        top: 15px;
+        top: 5px;
         right: 35px;
     }
     
