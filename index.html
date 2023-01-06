@@ -57,176 +57,150 @@
                         </div>
                     </div>
                     <hr />
-                    <div class="row justify-content-center">
-                        <div class="col-9">
-                            <table class="table table-borderless text-light sound-table">
-                                <thead>
-                                    <tr>
-                                        <th style="width: 40%" scope="col">Ambient</th>
-                                        <th style="width: 60%" scope="col">Volume</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <th scope="row">
-                                            <div class="dropdown dropdown-dark">
-                                                <select id="ambient-selector" class="dropdown-select" autocomplete="off" onchange="playMyAudio('ambient', this.value)">
-                                                    <option value="None" selected="selected">None</option>
-                                                    <option value="motivation">Motivation</option>
-                                                    <option value="piano">Piano</option>
-                                                    <option value="meditation">Meditation</option>
-                                                </select>
-                                            </div>
-                                        </th>
-                                        <td>
-                                            <div class="volumeAmbient" title="Set volume"> <span class="volumeBarAmbient"></span></div>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                            <hr />
-                            <table class="table table-borderless text-light">
-                                <thead>
-                                    <tr>
-                                        <th style="width: 40%" scope="col">Nature Sounds</th>
-                                        <th style="width: 60%" scope="col">Volume</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <th scope="row">
-                                            <div class="dropdown dropdown-dark">
-                                                <select id="nature-selector" class="dropdown-select" autocomplete="off" onchange="playMyAudio('nature', this.value)">
-                                                    <option value="None" selected="selected">None</option>
-                                                    <option value="birds">Birds</option>
-                                                    <option value="rain">Rain</option>
-                                                    <option value="wind">Wind</option>
-                                                    <option value="waves">Waves</option>
-                                                </select>
-                                            </div>
-                                        </th>
-                                        <td>
-                                            <div class="volumeNature" title="Set volume"> <span class="volumeBarNature"></span></div>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                            <hr />
-                            <table class="table table-responsive table-borderless text-light">
-                                <thead>
-                                    <tr>
-                                        <th style="width: 40%" scope="col">Topping</th>
-                                        <th style="width: 60%" scope="col">Volume</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <th scope="row">
-                                            <div class="dropdown dropdown-dark">
-                                                <select id="asmr-selector" class="dropdown-select" autocomplete="off" onchange="playMyAudio('asmr', this.value)">
-                                                    <option value="None" selected="selected">None</option>
-                                                    <option value="keyboardtyping">Keyboard Typing</option>
-                                                    <option value="pageturning">Page Turning</option>
-                                                    <option value="urban">Urban</option>
-                                                </select>
-                                            </div>
-                                        </th>
-                                        <td>
-                                            <div class="volumeASMR" title="Set volume"> <span class="volumeBarASMR"></span></div>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                    <hr />
-                    <div class="meditation-check">
-                        <div class="form-check form-switch">
-                            <input class="form-check-input" type="checkbox" id="meditation-switch">
-                            <label class="form-check-label" for="meditation-switch">Meditation support</label>
-                        </div>
-                    </div>
-                    <hr />
-                    <p>
-                        <button type="button" class="btn btn-dark" onclick="openFullscreen();">Enjoy in Fullscreen Mode</button>
-                        <span>(</span><button type="button" class="btn btn-dark" onclick="closeFullscreen();">Close</button><span>)</span>
-                    </p>
-                    <!--###########################################-->
-                    <div class="modal fade" id="collapseImpressum" tabindex="-1" role="dialog" aria-labelledby="collapseImpressumTitle" aria-hidden="true">
-                        <div class="modal-dialog" role="document">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h5 class="modal-title" id="collapseImpressumTitle">Modal title</h5>
-                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                        <span aria-hidden="true">&times;</span>
-                                    </button>
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-sm-4 col-lg-auto">
+                                <h5>Ambient</h5>
+                                <div class="dropdown dropdown-dark">
+                                    <select id="ambient-selector" class="dropdown-select" autocomplete="off" onchange="playMyAudio('ambient', this.value)">
+                                        <option value="None" selected="selected">None</option>
+                                        <option value="motivation">Motivation</option>
+                                        <option value="piano">Piano</option>
+                                        <option value="meditation">Meditation</option>
+                                    </select>
                                 </div>
-                                <div class="modal-body">
-                                    <p>Some placeholder content for the collapse component. This panel is hidden by default but revealed when the user activates the relevant trigger.</p>
+                            </div>
+                            <div class="col-sm-8 col-lg-4">
+                                <h5>Volume</h5>
+                                <div class="volumeAmbient" title="Set volume"> <span class="volumeBarAmbient"></span></div>
+                            </div>
+                        </div>
+                        <hr />
+                        <div class="row justify-content-center">
+                            <div class="col-sm-4 col-lg-auto">
+                                <h5>Nature</h5>
+                                <div class="dropdown dropdown-dark">
+                                    <select id="nature-selector" class="dropdown-select" autocomplete="off" onchange="playMyAudio('nature', this.value)">
+                                        <option value="None" selected="selected">None</option>
+                                        <option value="birds">Birds</option>
+                                        <option value="rain">Rain</option>
+                                        <option value="wind">Wind</option>
+                                        <option value="waves">Waves</option>
+                                    </select>
                                 </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            </div>
+                            <div class="col-sm-8 col-lg-4">
+                                <h5>Volume</h5>
+                                <div class="volumeNature" title="Set volume"> <span class="volumeBarNature"></span></div>
+                            </div>
+                        </div>
+                        <hr />
+                        <div class="row justify-content-center">
+                            <div class="col-sm-4 col-lg-auto">
+                                <h5>Topping</h5>
+                                <div class="dropdown dropdown-dark">
+                                    <select id="nature-selector" class="dropdown-select" autocomplete="off" onchange="playMyAudio('nature', this.value)">
+                                        <option value="None" selected="selected">None</option>
+                                        <option value="birds">Birds</option>
+                                        <option value="rain">Rain</option>
+                                        <option value="wind">Wind</option>
+                                        <option value="waves">Waves</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-sm-8 col-lg-4">
+                                <h5>Volume</h5>
+                                <div class="volumeASMR" title="Set volume"> <span class="volumeBarASMR"></span></div>
+                            </div>
+                        </div>
+                        <hr />
+                        <div class="meditation-check">
+                            <div class="form-check form-switch">
+                                <input class="form-check-input" type="checkbox" id="meditation-switch">
+                                <label class="form-check-label" for="meditation-switch">Meditation support</label>
+                            </div>
+                        </div>
+                        <hr />
+                        <p>
+                            <button type="button" class="btn btn-dark" onclick="openFullscreen();">Enjoy in Fullscreen Mode</button>
+                            <span>(</span><button type="button" class="btn btn-dark" onclick="closeFullscreen();">Close</button><span>)</span>
+                        </p>
+                        <!--###########################################-->
+                        <div class="modal fade" id="collapseImpressum" tabindex="-1" role="dialog" aria-labelledby="collapseImpressumTitle" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="collapseImpressumTitle">Modal title</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <p>Some placeholder content for the collapse component. This panel is hidden by default but revealed when the user activates the relevant trigger.</p>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="modal fade" id="collapsePrivacy" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
-                        <div class="modal-dialog" role="document">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
-                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                        <span aria-hidden="true">&times;</span>
-                                    </button>
-                                </div>
-                                <div class="modal-body">
-                                    <p>Some placeholder content for the collapse component. This panel is hidden by default but revealed when the user activates the relevant trigger.</p>
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <div class="modal fade" id="collapsePrivacy" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <p>Some placeholder content for the collapse component. This panel is hidden by default but revealed when the user activates the relevant trigger.</p>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="collapse" id="collapseDonation">
-                        <div class="container-fluid container-sm container-md">
-                            <p>Some placeholder content for the collapse component. This panel is hidden by default but revealed when the user activates the relevant trigger.</p>
+                        <div class="collapse" id="collapseDonation">
+                            <div class="container-fluid container-sm container-md">
+                                <p>Some placeholder content for the collapse component. This panel is hidden by default but revealed when the user activates the relevant trigger.</p>
+                            </div>
                         </div>
+                        <ul class="list-inline list-inline-sm list-inline-md footer">
+                            <button type="button" class="btn btn-dark btn-footer" data-bs-toggle="modal" data-bs-target="#staticBackdropAttribution">
+                                Attribution
+                            </button>
+                            <button type="button" class="btn btn-dark btn-footer" data-bs-toggle="modal" data-bs-target="#staticBackdropImpressum">
+                                Impressum
+                            </button>
+                            <button type="button" class="btn btn-dark btn-footer" data-bs-toggle="modal" data-bs-target="#staticBackdropPrivacy">
+                                Privacy
+                            </button>
+                            <!--<li class="list-inline-item"><button type="button" class="btn btn-light" data-bs-toggle="collapse" href="#collapsePrivacy" role="button" aria-expanded="false" aria-controls="collapsePrivacy">Send me a coffee</button></li>-->
+                        </ul>
+                        <!--<div id="donate-button-container">
+        <div class="donate-button-wrapper">
+            <span>Consider donating if you like <i class="bi bi-cup-hot"></i> as much as I do :)</span>
+            <div id="donate-button" class="btn"></div>
+        </div>
+        <script src="https://www.paypalobjects.com/donate/sdk/donate-sdk.js" charset="UTF-8"></script>
+        <script>
+            PayPal.Donation.Button({
+                env: 'production',
+                hosted_button_id: '3TEU7UF6RGANY',
+                image: {
+                    src: 'https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif',
+                    alt: 'Donate with PayPal button',
+                    title: 'PayPal - The safer, easier way to pay online!',
+                }
+            }).render('#donate-button');
+        </script>
+    </div>-->
+                        <!-- Button trigger modal -->
                     </div>
-                    <ul class="list-inline list-inline-sm list-inline-md footer">
-                        <button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#staticBackdropAttribution">
-                            Attribution
-                        </button>
-                        <button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#staticBackdropImpressum">
-                            Impressum
-                        </button>
-                        <button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#staticBackdropPrivacy">
-                            Privacy
-                        </button>
-                        <!--<li class="list-inline-item"><button type="button" class="btn btn-light" data-bs-toggle="collapse" href="#collapsePrivacy" role="button" aria-expanded="false" aria-controls="collapsePrivacy">Send me a coffee</button></li>-->
-                    </ul>
-                    <!--<div id="donate-button-container">
-                        <div class="donate-button-wrapper">
-                            <span>Consider donating if you like <i class="bi bi-cup-hot"></i> as much as I do :)</span>
-                            <div id="donate-button" class="btn"></div>
-                        </div>
-                        <script src="https://www.paypalobjects.com/donate/sdk/donate-sdk.js" charset="UTF-8"></script>
-                        <script>
-                            PayPal.Donation.Button({
-                                env: 'production',
-                                hosted_button_id: '3TEU7UF6RGANY',
-                                image: {
-                                    src: 'https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif',
-                                    alt: 'Donate with PayPal button',
-                                    title: 'PayPal - The safer, easier way to pay online!',
-                                }
-                            }).render('#donate-button');
-                        </script>
-                    </div>-->
-                    <!-- Button trigger modal -->
-                </div>
-                
-            </div>
+
+                    </div>
         </div>
         <script src="./js/theme.js"></script>
         <script src="./js/audio-player.js"></script>

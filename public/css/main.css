@@ -59,11 +59,10 @@ html {
     width: 25%;
     padding-left: 30px;
     margin: 0 auto;
-    /*border: 1px solid red;*/
 }
 
 .test {
-    border: 1px solid black;
+    border: 1px solid red;
 }
 
 .btn-group-vertical>.btn {
@@ -177,7 +176,11 @@ html {
     font-size: 60px;
 }
 
-/* When the height of the screen is less than 450 pixels, change the font-size of the links and position the close button again, so they don't overlap */
+/* 
+ * When the height of the screen is less than 412 pixels, 
+ * change the font-size of the links and position the close button again, 
+ * so they don't overlap 
+*/
 @media screen and (max-width: 412px) {
     .overlay a {
         font-size: 20px;
@@ -188,6 +191,10 @@ html {
         top: 15px;
         right: 35px;
     }
+    
+    .btn-footer {
+        margin: 10px;
+    }
 }
 
 @media screen and (max-width: 1400px) {
@@ -195,3 +202,4 @@ html {
         margin-bottom: 4px;
     }
 }
+
