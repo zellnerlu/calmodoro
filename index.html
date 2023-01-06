@@ -22,7 +22,6 @@
             <div onclick="openNav()" class="blob"></div>
         </div>
         <div id="meditation-support"><span id="meditation-text">Breathe in...</span></div>
-
         <div id="myNav" class="overlay">
             <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
             <div class="overlay-content text-light">
@@ -125,80 +124,75 @@
                             <button type="button" class="btn btn-dark" onclick="openFullscreen();">Enjoy in Fullscreen Mode</button>
                             <span>(</span><button type="button" class="btn btn-dark" onclick="closeFullscreen();">Close</button><span>)</span>
                         </p>
-                        <!--###########################################-->
-                        <div class="modal fade" id="collapseImpressum" tabindex="-1" role="dialog" aria-labelledby="collapseImpressumTitle" aria-hidden="true">
-                            <div class="modal-dialog" role="document">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h5 class="modal-title" id="collapseImpressumTitle">Modal title</h5>
-                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                            <span aria-hidden="true">&times;</span>
-                                        </button>
-                                    </div>
-                                    <div class="modal-body">
-                                        <p>Some placeholder content for the collapse component. This panel is hidden by default but revealed when the user activates the relevant trigger.</p>
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                    </div>
+                    </div>
+                    <!--###########################################-->
+                    <div class="modal fade" id="collapseImpressum" tabindex="-1" role="dialog" aria-labelledby="collapseImpressumTitle" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="collapseImpressumTitle">Modal title</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <p>Some placeholder content for the collapse component. This panel is hidden by default but revealed when the user activates the relevant trigger.</p>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                                 </div>
                             </div>
-                        </div>
-                        <div class="modal fade" id="collapsePrivacy" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
-                            <div class="modal-dialog" role="document">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
-                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                            <span aria-hidden="true">&times;</span>
-                                        </button>
-                                    </div>
-                                    <div class="modal-body">
-                                        <p>Some placeholder content for the collapse component. This panel is hidden by default but revealed when the user activates the relevant trigger.</p>
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="collapse" id="collapseDonation">
-                            <div class="container-fluid container-sm container-md">
-                                <p>Some placeholder content for the collapse component. This panel is hidden by default but revealed when the user activates the relevant trigger.</p>
-                            </div>
-                        </div>
-                        <ul class="list-inline list-inline-sm list-inline-md footer">
-                            <button type="button" class="btn btn-dark btn-footer" data-bs-toggle="modal" data-bs-target="#staticBackdropAttribution">
-                                Attribution
-                            </button>
-                            <button type="button" class="btn btn-dark btn-footer" data-bs-toggle="modal" data-bs-target="#staticBackdropImpressum">
-                                Impressum
-                            </button>
-                            <button type="button" class="btn btn-dark btn-footer" data-bs-toggle="modal" data-bs-target="#staticBackdropPrivacy">
-                                Privacy
-                            </button>
-                            <!--<li class="list-inline-item"><button type="button" class="btn btn-light" data-bs-toggle="collapse" href="#collapsePrivacy" role="button" aria-expanded="false" aria-controls="collapsePrivacy">Send me a coffee</button></li>-->
-                        </ul>
-                        <div class="donate-button-wrapper">
-                            <span>Please consider donating if you would<br />like to use this app frequently.</span>
-                            <div id="donate-button-container">
-                                <div id="donate-button"></div>
-                                <script src="https://www.paypalobjects.com/donate/sdk/donate-sdk.js" charset="UTF-8"></script>
-                                <script>
-                                    PayPal.Donation.Button({
-                                        env: 'production',
-                                        hosted_button_id: '3TEU7UF6RGANY',
-                                        image: {
-                                            src: 'https://pics.paypal.com/00/s/OWQ0NDc5ZTEtOTc1Mi00MDVjLWEyZTAtYjUwMmIxMjZmZTdl/file.PNG',
-                                            alt: 'Donate with PayPal button',
-                                            title: 'PayPal - The safer, easier way to pay online!',
-                                        }
-                                    }).render('#donate-button');
-                                </script>
-                            </div>
-    <!-- Button trigger modal -->
                         </div>
                     </div>
+                    <div class="modal fade" id="collapsePrivacy" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <p>Some placeholder content for the collapse component. This panel is hidden by default but revealed when the user activates the relevant trigger.</p>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <ul class="list-inline list-inline-sm list-inline-md footer">
+                        <button type="button" class="btn btn-dark btn-footer" data-bs-toggle="modal" data-bs-target="#staticBackdropAttribution">
+                            Attribution
+                        </button>
+                        <button type="button" class="btn btn-dark btn-footer" data-bs-toggle="modal" data-bs-target="#staticBackdropImpressum">
+                            Impressum
+                        </button>
+                        <button type="button" class="btn btn-dark btn-footer" data-bs-toggle="modal" data-bs-target="#staticBackdropPrivacy">
+                            Privacy
+                        </button>
+                    </ul>
+                    <div class="donate-button-wrapper">
+                        <span>Please consider donating if you would<br />like to use this app frequently.</span>
+                        <div id="donate-button-container">
+                            <div id="donate-button"></div>
+                            <script src="https://www.paypalobjects.com/donate/sdk/donate-sdk.js" charset="UTF-8"></script>
+                            <script>
+                                PayPal.Donation.Button({
+                                    env: 'production',
+                                    hosted_button_id: '3TEU7UF6RGANY',
+                                    image: {
+                                        src: 'https://pics.paypal.com/00/s/OWQ0NDc5ZTEtOTc1Mi00MDVjLWEyZTAtYjUwMmIxMjZmZTdl/file.PNG',
+                                        alt: 'Donate with PayPal button',
+                                        title: 'PayPal - The safer, easier way to pay online!',
+                                    }
+                                }).render('#donate-button');
+                            </script>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
         <script src="./js/theme.js"></script>
         <script src="./js/audio-player.js"></script>
@@ -277,11 +271,8 @@
                             Hofmarkweg 7<br />
                             82008 Unterhaching
                         </p>
-
                         <h6>Kontakt</h6>
-                        <p>
-                            E-Mail: calmodoro@gmail.com;
-                        </p>
+                        <p>E-Mail: calmodoro@gmail.com</p>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -346,8 +337,6 @@
             </div>
         </div>
     </div>
-    
-
     <!-- ########################## JS ########################## -->
     <script src="./js/main.js"></script>
     <script src="./js/meditation-support.js"></script>
