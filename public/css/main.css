@@ -41,19 +41,20 @@ html {
     box-shadow: 0 0 0 0.1rem slategray !important;
 }
 
-#meditation-support{
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-weight: 300;
-  font-size: 40px;
-  color: white;
-  border: 3px solid rgb(206,130,80);
-  border-radius: 5px;
-  padding: 20px;
-  background-color: rgba(222,170,136, 0.4);
-  display: none;
+#meditation-support {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-weight: 400;
+    font-size: 40px;
+    color: whitesmoke;
+    border: 3px solid rgba(0, 0, 0, 0.8);
+    border-radius: 15px;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.6);
+    text-align: center;
+    display: none;
 }
 
 .table {
