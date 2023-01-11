@@ -103,6 +103,7 @@ function playMyAudio(cat, s) {
                 this.play();
             }, false);
             playAmbient();
+            ambient_audio.load();
             ambient_audio.play();
         }
     } else if (cat == "nature") {
@@ -117,6 +118,7 @@ function playMyAudio(cat, s) {
                 this.play();
             }, false);
             playNature();
+            nature_audio.load();
             nature_audio.play();
         }
     } else if (cat == "asmr" | sound == null) {
@@ -131,6 +133,7 @@ function playMyAudio(cat, s) {
                 this.play();
             }, false);
             playASMR();
+            asmr_audio.load();
             asmr_audio.play();
         }
     }
