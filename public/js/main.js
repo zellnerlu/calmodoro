@@ -1,5 +1,15 @@
+var overlay_open = false;
+
 function openNav() {
-    document.getElementById("myNav").style.height = "100%";
+    if (!overlay_open) {
+        document.getElementById("myNav").style.height = "100%";
+        overlay_open = true;
+    } else {
+        closeNav();
+        overlay_open = false;
+    }
+    
+    
 }
 
 function closeNav() {
