@@ -8,8 +8,6 @@ function openNav() {
         closeNav();
         overlay_open = false;
     }
-    
-    
 }
 
 function closeNav() {
