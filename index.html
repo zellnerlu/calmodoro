@@ -19,7 +19,6 @@
     <link rel="preload" href="/images/backgrounds/forest.jpg" as="image">
     <link rel="preload" href="/images/backgrounds/river.jpg" as="image">
     <link rel="preload" href="/images/backgrounds/sky.jpg" as="image">
-
 </head>
 
 <body>
@@ -27,9 +26,10 @@
         <div class="blob-wrapper">
             <div onclick="openNav()" class="blob"></div>
         </div>
-        <div id="meditation-support"><span id="meditation-text">Breathe in...</span></div>
+        <div id="meditation-support">
+            <span id="meditation-text">Breathe in...</span>
+        </div>
         <div id="myNav" class="overlay">
-            <!--<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>-->
             <div class="overlay-content text-light">
                 <h2>Select your theme</h2>
                 <div class="container">
@@ -124,6 +124,10 @@
                                 <div class="form-check form-switch">
                                     <input class="form-check-input" type="checkbox" id="meditation-switch">
                                     <label class="form-check-label" id="meditation-support-label" for="meditation-switch">Meditation Support</label>
+                                </div>
+                                <div class="meditation-support-time" style="width: 22rem;">
+                                    <input value="2" min="2" max="5" type="number" id="meditation-time" class="form-control" />
+                                    <label class="form-label" for="typeNumber">Insert favorite breath duration (in and out).</label>
                                 </div>
                             </div>
                         </div>

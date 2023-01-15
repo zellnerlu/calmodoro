@@ -57,6 +57,10 @@ html {
     display: none;
 }
 
+.meditation-support-time {
+    display: none;
+}
+
 .table {
     width: 60%;
     margin: auto;

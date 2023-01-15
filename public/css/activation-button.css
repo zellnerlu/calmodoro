@@ -2,7 +2,7 @@
 	padding: 25px;
 }
 .blob {
-	background: rgba(255,255,255,0.65);
+	background: rgba(255,255,255,1);
 	border-radius: 60%;
 	position: relative;
 	border: 3px solid rgba(255, 100, 0, 0.8);
