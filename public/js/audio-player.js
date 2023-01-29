@@ -87,13 +87,31 @@ $(document).ready(function() {
     });
 });
 
+function stopAudio(a) {
+    a.pause();
+    a = null;
+}
+
+function stopAllAudio() {
+    if (ambient_audio != null) {
+        stopAudio(ambient_audio);
+    }
+    if (nature_audio != null) {
+        stopAudio(nature_audio);
+    }
+    if (asmr_audio != null) {
+        stopAudio(asmr_audio);
+    }
+}
+
 function playMyAudio(cat, s) {
     sound = findSound(cat, s);
     console.log(sound);
     if (cat == "ambient") {
         if (ambient_audio != null | sound == null) {
-            ambient_audio.pause();
-            ambient_audio = null;
+            stopAudio(ambient_audio);
+            /*ambient_audio.pause();
+            ambient_audio = null;*/
         }
         if (sound != null) {
             ambient_audio = new Audio(sound.mp3);
@@ -106,8 +124,9 @@ function playMyAudio(cat, s) {
         }
     } else if (cat == "nature") {
         if (nature_audio != null | sound == null) {
-            nature_audio.pause();
-            nature_audio = null;
+            stopAudio(nature_audio);
+            /*nature_audio.pause();
+            nature_audio = null;*/
         }
         if (sound != null) {
             nature_audio = new Audio(sound.mp3);
@@ -120,8 +139,9 @@ function playMyAudio(cat, s) {
         }
     } else if (cat == "asmr" | sound == null) {
         if (asmr_audio != null) {
-            asmr_audio.pause();
-            asmr_audio = null;
+            stopAudio(asmr_audio);
+            /*asmr_audio.pause();
+            asmr_audio = null;*/
         }
         if (sound != null) {
             asmr_audio = new Audio(sound.mp3);

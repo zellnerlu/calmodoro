@@ -1,11 +1,19 @@
+const pomodoro_input = document.getElementById('pomodoro-switch');
+pomodoro_input.checked = false;
+
+pomodoro_input.addEventListener('change', function () {
+    var now = new Date();
+    // Set the date we're counting down to
+    var countDownDate = addMinutes(now, 1);
+    setPomorodo(countDownDate);
+});
+
 function addMinutes(date, minutes) {
     date.setMinutes(date.getMinutes() + minutes);
     return date;
 }
 
-var now = new Date();
-// Set the date we're counting down to
-var countDownDate = addMinutes(now, 25);
+
 
 function setPomorodo(s) {
     // Update the count down every 1 second
@@ -14,7 +22,7 @@ function setPomorodo(s) {
         var now = new Date().getTime();
 
         // Find the distance between now and the count down date
-        var distance = countDownDate - now;
+        var distance = s - now;
 
         // Time calculations for days, hours, minutes and seconds
         //var days = Math.floor(distance / (1000 * 60 * 60 * 24));
@@ -27,6 +35,7 @@ function setPomorodo(s) {
         if (distance < 0) {
             clearInterval(x);
             document.getElementById("pomodoro-timer").innerHTML = "EXPIRED";
+            stopAllAudio();
         }
     }, s);
 }

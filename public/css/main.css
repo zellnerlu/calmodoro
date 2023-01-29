@@ -30,7 +30,7 @@ html {
     border: 1px solid lightgray;
     border-radius: 15px;
     padding: 10px;
-    display: none;
+    display: block;
 }
 
 #pomodoro-timer {
