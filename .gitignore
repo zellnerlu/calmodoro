@@ -1,2 +1,4 @@
 node_modules/
 .vs/
+nextjs/.next
+nextjs/node_modules
