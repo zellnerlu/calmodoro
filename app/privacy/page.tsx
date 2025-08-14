@@ -1,6 +1,4 @@
-import React from 'react';
-
-export default function Privacy({ show, handleClose }) {
+export default function Privacy() {
     return (
         <section className='max-w-3xl mx-auto p-6 md:p-8 my-12 bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg shadow-sm leading-relaxed text-gray-800 dark:text-gray-200'>
             <h1>Privacy</h1>
