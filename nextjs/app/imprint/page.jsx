@@ -1,6 +1,6 @@
-export default function Impressum({ show, handleClose }) {
+export default function Impressum() {
     return (
-        <section show={show} onHide={handleClose} backdrop='static' keyboard={false}>
+        <section className='max-w-3xl mx-auto p-6 md:p-8 my-12 bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg shadow-sm leading-relaxed text-gray-800 dark:text-gray-200'>
             <h1>Impressum</h1>
             <div>
                 <h6>Angaben gemäß § 5 TMG</h6>
