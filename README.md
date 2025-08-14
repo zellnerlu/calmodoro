@@ -1,6 +1,3 @@
-Absolutely! Here’s a **clean, copy-paste-ready Markdown version** of the README you can directly put into `README.md` for your GitHub repo:
-
-````markdown
 # Meditation & Productivity App
 
 A modern, responsive web application combining **meditation breathing exercises** and a **Pomodoro timer**, with **dynamic background themes**, smooth animations, and intuitive controls. Built with **Next.js** and **Tailwind CSS**, designed for desktop and mobile.
@@ -50,11 +47,10 @@ A modern, responsive web application combining **meditation breathing exercises*
 
 ## Tech Stack
 
--   **Next.js 13** (App Router / Client Components)
+-   **Next.js 15** (App Router / Client Components)
 -   **React** (functional components, hooks)
 -   **Tailwind CSS** (responsive, modern styling)
 -   **JavaScript / TypeScript**
--   **Optional:** Supabase for authentication and data storage
 
 ---
 
@@ -66,7 +62,6 @@ A modern, responsive web application combining **meditation breathing exercises*
 git clone https://github.com/zellnerlu/calmodoro.git
 cd calmodoro
 ```
-````
 
 2. **Install dependencies**
 
@@ -119,6 +114,5 @@ yarn dev
 ## Acknowledgements
 
 -   Inspired by **modern meditation and productivity apps**
--   Background images sourced from \[unsplash.com]
--   Sounds and music sourced from \[mixkit.co]
+-   Background images sourced from \[unsplash.com] or your custom library
 -   Ko-fi integration for donations
