@@ -81,6 +81,11 @@ export const bib: Bib = {
             mp3: 'https://assets.mixkit.co/active_storage/sfx/1263/1263-preview.mp3',
             attribution: 'mixkit.co',
         },
+        sea_waves: {
+            title: 'Sea Waves',
+            mp3: 'https://assets.mixkit.co/active_storage/sfx/1189/1189-preview.mp3',
+            attribution: 'mixkit.co',
+        },
     },
     topping: {
         keyboardtyping: {
@@ -91,6 +96,11 @@ export const bib: Bib = {
         pageturning: {
             title: 'Page Turning',
             mp3: 'https://assets.mixkit.co/active_storage/sfx/1097/1097-preview.mp3',
+            attribution: 'mixkit.co',
+        },
+        wooden_ship_on_water: {
+            title: 'Wooden Ship on Water',
+            mp3: 'https://assets.mixkit.co/active_storage/sfx/1187/1187-preview.mp3',
             attribution: 'mixkit.co',
         },
     },
