@@ -14,6 +14,8 @@ export default function Home() {
     const { isOverlayOpen, toggleOverlayOpen } = useOverlayOpenStore();
     const [showMeditation, setShowMeditation] = useState(false);
     const [showPomodoroTimer, setShowPomodoroTimer] = useState(false);
+    const [workMinutes, setWorkMinutes] = useState(25);
+    const [breakMinutes, setBreakMinutes] = useState(5);
 
     useEffect(() => {
         const handleKeydown = (e: KeyboardEvent) => {
@@ -75,7 +77,13 @@ export default function Home() {
             </div>
 
             <div className='bg-transparent flex flex-col items-center justify-center pt-24'>
-                {showPomodoroTimer && <PomodoroTimer onBreakStart={() => console.log('Break started')} />}
+                {showPomodoroTimer && (
+                    <PomodoroTimer
+                        workMinutes={workMinutes}
+                        breakMinutes={breakMinutes}
+                        onBreakStart={() => console.log('Break started')}
+                    />
+                )}
                 {showMeditation && <MeditationBreather />}
             </div>
 
@@ -124,41 +132,62 @@ export default function Home() {
 
                     <div className='my-8 border-t border-white/10'></div>
 
-                    {/* Toggles */}
-                    <div className='flex flex-wrap gap-2 justify-center text-sm'>
-                        <button
-                            className='
-      px-4 py-1.5 rounded-full bg-white/5 border border-white/10
-      hover:bg-white/10 transition-colors
-    '
-                            onClick={() =>
-                                setShowPomodoroTimer((prev) => {
-                                    if (!prev) {
-                                        setShowMeditation(false);
-                                    }
-                                    return !prev;
-                                })
-                            }
-                        >
-                            {showPomodoroTimer ? 'Hide Pomodoro Timer' : 'Show Pomodoro Timer'}
-                        </button>
-
-                        <button
-                            className='
-      px-4 py-1.5 rounded-full bg-white/5 border border-white/10
-      hover:bg-white/10 transition-colors
-    '
-                            onClick={() =>
-                                setShowMeditation((prev) => {
-                                    if (!prev) {
+                    {/* Toggles & Settings */}
+                    <div className='flex flex-col sm:flex-row sm:items-center sm:space-x-4 gap-2 justify-center text-sm'>
+                        {/* Toggle Buttons */}
+                        <div className='flex flex-wrap gap-2 w-[256px]'>
+                            <button
+                                className='px-4 py-1.5 rounded-full bg-white/5 border border-white/10 text-white font-medium hover:bg-white/10 transition-colors'
+                                onClick={() =>
+                                    setShowPomodoroTimer((prev) => {
+                                        if (!prev) setShowMeditation(false);
+                                        return !prev;
+                                    })
+                                }
+                            >
+                                {showPomodoroTimer ? 'Hide Pomodoro Timer' : 'Show Pomodoro Timer'}
+                            </button>
+                            <label className='flex flex-col text-white'>
+                                Work (minutes)
+                                <input
+                                    type='number'
+                                    min={1}
+                                    value={workMinutes}
+                                    onChange={(e) => {
                                         setShowPomodoroTimer(false);
-                                    }
-                                    return !prev;
-                                })
-                            }
-                        >
-                            {showMeditation ? 'Hide Meditation Breather' : 'Show Meditation Breather'}
-                        </button>
+                                        setWorkMinutes(parseInt(e.target.value));
+                                    }}
+                                    className='w-20 px-2 py-1 rounded bg-white/10 text-white border border-white/20 focus:outline-none focus:ring-1 focus:ring-white/30 transition'
+                                />
+                            </label>
+
+                            <label className='flex flex-col text-white'>
+                                Break (minutes)
+                                <input
+                                    type='number'
+                                    min={1}
+                                    value={breakMinutes}
+                                    onChange={(e) => {
+                                        setShowPomodoroTimer(false);
+                                        setBreakMinutes(parseInt(e.target.value));
+                                    }}
+                                    className='w-20 px-2 py-1 rounded bg-white/10 text-white border border-white/20 focus:outline-none focus:ring-1 focus:ring-white/30 transition'
+                                />
+                            </label>
+                        </div>
+                        <div className='flex flex-wrap gap-2'>
+                            <button
+                                className='px-4 py-1.5 rounded-full bg-white/5 border border-white/10 text-white font-medium hover:bg-white/10 transition-colors'
+                                onClick={() =>
+                                    setShowMeditation((prev) => {
+                                        if (!prev) setShowPomodoroTimer(false);
+                                        return !prev;
+                                    })
+                                }
+                            >
+                                {showMeditation ? 'Hide Meditation Breather' : 'Show Meditation Breather'}
+                            </button>
+                        </div>
                     </div>
 
                     <hr className='my-4 border-white/10' />
