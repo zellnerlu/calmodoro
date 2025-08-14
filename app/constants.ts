@@ -103,5 +103,10 @@ export const bib: Bib = {
             mp3: 'https://assets.mixkit.co/active_storage/sfx/1187/1187-preview.mp3',
             attribution: 'mixkit.co',
         },
+        wave_splashing: {
+            title: 'Wave Splashing',
+            mp3: 'https://cdn.freesound.org/previews/796/796671_7993693-lq.mp3',
+            attribution: 'freesound.org',
+        },
     },
 };
