@@ -41,7 +41,7 @@ A modern, responsive web application combining **meditation breathing exercises*
 
 ## Demo
 
-![Demo GIF or Screenshot](link-to-demo)
+![Demo Link](https://calmodoro.vercel.app/)
 
 ---
 
