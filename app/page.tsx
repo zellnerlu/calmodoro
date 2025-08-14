@@ -214,7 +214,17 @@ export default function Home() {
                             Close Fullscreen
                         </button>
                     </div>
+                    <hr className='my-4 border-white/10' />
 
+                    {/* Ko-fi Button */}
+                    <div className='mt-4 flex flex-col gap-2 justify-center items-center w-[20%] mx-auto'>
+                        <p className='text-center'>
+                            Do you want to say
+                            <br />
+                            "Thank you"?
+                        </p>
+                        <KoFiButton />
+                    </div>
                     <hr className='my-4 border-white/10' />
 
                     {/* Links */}
@@ -248,10 +258,6 @@ export default function Home() {
                         >
                             Privacy
                         </Link>
-                    </div>
-
-                    <div className='mt-6 flex justify-center'>
-                        <KoFiButton />
                     </div>
                 </div>
             </div>
