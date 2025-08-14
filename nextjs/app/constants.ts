@@ -36,19 +36,23 @@ export const bib: Bib = {
     nature: {
         birds: {
             title: 'European Forest Birds',
-            mp3: 'https://assets.mixkit.co/sfx/preview/mixkit-european-forest-ambience-1213.mp3',
+            mp3: 'https://assets.mixkit.co/active_storage/sfx/1213/1213-preview.mp3',
         },
-        owl: { title: 'Owl in a forest', mp3: 'https://assets.mixkit.co/sfx/preview/mixkit-owl-in-a-forest-2466.mp3' },
-        rain: { title: 'Rain', mp3: 'https://assets.mixkit.co/sfx/preview/mixkit-long-rain-ambience-1247.mp3' },
+        owl: { title: 'Owl in a forest', mp3: 'https://assets.mixkit.co/active_storage/sfx/2466/2466-preview.mp3' },
+        rain: { title: 'Rain and Thunder', mp3: 'https://assets.mixkit.co/active_storage/sfx/2390/2390-preview.mp3' },
+        rain_on_umbrella: {
+            title: 'Rain on an Umbrella',
+            mp3: 'https://assets.mixkit.co/active_storage/sfx/1263/1263-preview.mp3',
+        },
     },
     topping: {
         keyboardtyping: {
             title: 'Keyboard Typing',
-            mp3: 'https://assets.mixkit.co/sfx/preview/mixkit-laptop-keyboard-typing-sequence-2537.mp3',
+            mp3: 'https://assets.mixkit.co/active_storage/sfx/2537/2537-preview.mp3',
         },
         pageturning: {
             title: 'Page Turning',
-            mp3: 'https://assets.mixkit.co/sfx/preview/mixkit-turning-the-newspaper-big-page-1097.mp3',
+            mp3: 'https://assets.mixkit.co/active_storage/sfx/1097/1097-preview.mp3',
         },
     },
 };

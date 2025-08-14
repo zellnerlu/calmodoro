@@ -75,7 +75,7 @@ export default function Home() {
             </div>
 
             <div className='bg-transparent flex flex-col items-center justify-center pt-24'>
-                {showPomodoroTimer && <PomodoroTimer onBreakStart={() => setShowMeditation(true)} />}
+                {showPomodoroTimer && <PomodoroTimer onBreakStart={() => console.log('Break started')} />}
                 {showMeditation && <MeditationBreather />}
             </div>
 
@@ -131,7 +131,14 @@ export default function Home() {
       px-4 py-1.5 rounded-full bg-white/5 border border-white/10
       hover:bg-white/10 transition-colors
     '
-                            onClick={() => setShowPomodoroTimer((prev) => !prev)}
+                            onClick={() =>
+                                setShowPomodoroTimer((prev) => {
+                                    if (!prev) {
+                                        setShowMeditation(false);
+                                    }
+                                    return !prev;
+                                })
+                            }
                         >
                             {showPomodoroTimer ? 'Hide Pomodoro Timer' : 'Show Pomodoro Timer'}
                         </button>
@@ -141,7 +148,14 @@ export default function Home() {
       px-4 py-1.5 rounded-full bg-white/5 border border-white/10
       hover:bg-white/10 transition-colors
     '
-                            onClick={() => setShowMeditation((prev) => !prev)}
+                            onClick={() =>
+                                setShowMeditation((prev) => {
+                                    if (!prev) {
+                                        setShowPomodoroTimer(false);
+                                    }
+                                    return !prev;
+                                })
+                            }
                         >
                             {showMeditation ? 'Hide Meditation Breather' : 'Show Meditation Breather'}
                         </button>
