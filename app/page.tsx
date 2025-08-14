@@ -221,7 +221,7 @@ export default function Home() {
                         <p className='text-center'>
                             Do you want to say
                             <br />
-                            "Thank you"?
+                            &ldquo;Thank you&rdquo;?
                         </p>
                         <KoFiButton />
                     </div>
