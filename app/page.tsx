@@ -181,7 +181,7 @@ export default function Home() {
 
                     <hr className='my-4 border-white/10' />
 
-                    <div className='flex flex-wrap gap-2 justify-center text-sm'>
+                    <div className='flex flex-col items-center justify-center gap-4 text-sm'>
                         <button
                             className='px-4 py-1.5 rounded-full bg-white/5 border border-white/10 text-white font-medium hover:bg-white/10 transition-colors'
                             onClick={() =>
