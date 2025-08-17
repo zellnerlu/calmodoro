@@ -108,5 +108,10 @@ export const bib: Bib = {
             mp3: 'https://cdn.freesound.org/previews/796/796671_7993693-lq.mp3',
             attribution: 'freesound.org',
         },
+        walking_on_leaves: {
+            title: 'Walking on Leaves',
+            mp3: 'https://cdn.freesound.org/previews/765/765999_15695818-lq.mp3',
+            attribution: 'freesound.org',
+        },
     },
 };
