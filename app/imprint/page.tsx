@@ -5,7 +5,7 @@ export default function Impressum() {
             <div>
                 <h6>Angaben gemäß § 5 TMG</h6>
                 <p>
-                    Ludwig Zellner
+                    Dr. Ludwig Zellner
                     <br />
                     Prinz-Eugen-Str. 2<br />
                     80804 München

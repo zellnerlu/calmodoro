@@ -16,6 +16,8 @@ export default function Home() {
     const [showPomodoroTimer, setShowPomodoroTimer] = useState(false);
     const [workMinutes, setWorkMinutes] = useState(25);
     const [breakMinutes, setBreakMinutes] = useState(5);
+    const [breatheInSeconds, setBreatheInSeconds] = useState(4000);
+    const [breatheOutSeconds, setBreatheOutSeconds] = useState(6000);
 
     useEffect(() => {
         const handleKeydown = (e: KeyboardEvent) => {
@@ -84,7 +86,7 @@ export default function Home() {
                         onBreakStart={() => console.log('Break started')}
                     />
                 )}
-                {showMeditation && <MeditationBreather />}
+                {showMeditation && <MeditationBreather inTime={breatheInSeconds} outTime={breatheOutSeconds} />}
             </div>
 
             {/* Overlay */}
@@ -130,12 +132,12 @@ export default function Home() {
 
                     <SoundPlayer />
 
-                    <div className='my-8 border-t border-white/10'></div>
+                    <div className='my-4 border-t border-white/10'></div>
 
                     {/* Toggle Buttons */}
                     <div className='flex flex-col items-center justify-center gap-4 text-sm'>
                         <button
-                            className='px-4 py-1.5 rounded-full bg-white/5 border border-white/10 text-white font-medium hover:bg-white/10 transition-colors'
+                            className='px-4 py-2 rounded-full bg-white/5 border border-white/10 text-white font-medium hover:bg-white/10 transition-colors'
                             onClick={() =>
                                 setShowPomodoroTimer((prev) => {
                                     if (!prev) setShowMeditation(false);
@@ -146,10 +148,9 @@ export default function Home() {
                             {showPomodoroTimer ? 'Hide Pomodoro Timer' : 'Show Pomodoro Timer'}
                         </button>
 
-                        {/* Group Work + Break side by side */}
                         <div className='flex gap-4'>
                             <label className='flex flex-col items-center p-4 rounded bg-white/5 border border-white/10 text-white'>
-                                Work (minutes)
+                                Work (min)
                                 <input
                                     type='number'
                                     min={1}
@@ -163,7 +164,7 @@ export default function Home() {
                             </label>
 
                             <label className='flex flex-col items-center p-4 rounded bg-white/5 border border-white/10 text-white'>
-                                Break (minutes)
+                                Break (min)
                                 <input
                                     type='number'
                                     min={1}
@@ -192,6 +193,37 @@ export default function Home() {
                         >
                             {showMeditation ? 'Hide Meditation Breather' : 'Show Meditation Breather'}
                         </button>
+                        <div className='flex gap-4'>
+                            <label className='flex flex-col items-center p-4 rounded bg-white/5 border border-white/10 text-white'>
+                                Breathe in (sec)
+                                <input
+                                    type='number'
+                                    min={2}
+                                    max={8}
+                                    value={breatheInSeconds / 1000}
+                                    onChange={(e) => {
+                                        setShowMeditation(false);
+                                        setBreatheInSeconds(parseInt(e.target.value) * 1000);
+                                    }}
+                                    className='w-20 px-2 py-1 rounded bg-white/10 text-white border border-white/20 focus:outline-none focus:ring-1 focus:ring-white/30 transition'
+                                />
+                            </label>
+
+                            <label className='flex flex-col items-center p-4 rounded bg-white/5 border border-white/10 text-white'>
+                                Breathe out (sec)
+                                <input
+                                    type='number'
+                                    min={3}
+                                    max={10}
+                                    value={breatheOutSeconds / 1000}
+                                    onChange={(e) => {
+                                        setShowMeditation(false);
+                                        setBreatheOutSeconds(parseInt(e.target.value) * 1000);
+                                    }}
+                                    className='w-20 px-2 py-1 rounded bg-white/10 text-white border border-white/20 focus:outline-none focus:ring-1 focus:ring-white/30 transition'
+                                />
+                            </label>
+                        </div>
                     </div>
 
                     <hr className='my-4 border-white/10' />
