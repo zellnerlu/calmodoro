@@ -132,22 +132,23 @@ export default function Home() {
 
                     <div className='my-8 border-t border-white/10'></div>
 
-                    {/* Toggles & Settings */}
-                    <div className='flex flex-col sm:flex-row sm:items-center sm:space-x-4 gap-2 justify-center text-sm'>
-                        {/* Toggle Buttons */}
-                        <div className='flex flex-wrap gap-2 w-[256px]'>
-                            <button
-                                className='px-4 py-1.5 rounded-full bg-white/5 border border-white/10 text-white font-medium hover:bg-white/10 transition-colors'
-                                onClick={() =>
-                                    setShowPomodoroTimer((prev) => {
-                                        if (!prev) setShowMeditation(false);
-                                        return !prev;
-                                    })
-                                }
-                            >
-                                {showPomodoroTimer ? 'Hide Pomodoro Timer' : 'Show Pomodoro Timer'}
-                            </button>
-                            <label className='flex flex-col text-white'>
+                    {/* Toggle Buttons */}
+                    <div className='flex flex-col items-center justify-center gap-4 text-sm'>
+                        <button
+                            className='px-4 py-1.5 rounded-full bg-white/5 border border-white/10 text-white font-medium hover:bg-white/10 transition-colors'
+                            onClick={() =>
+                                setShowPomodoroTimer((prev) => {
+                                    if (!prev) setShowMeditation(false);
+                                    return !prev;
+                                })
+                            }
+                        >
+                            {showPomodoroTimer ? 'Hide Pomodoro Timer' : 'Show Pomodoro Timer'}
+                        </button>
+
+                        {/* Group Work + Break side by side */}
+                        <div className='flex gap-4'>
+                            <label className='flex flex-col items-center p-4 rounded bg-white/5 border border-white/10 text-white'>
                                 Work (minutes)
                                 <input
                                     type='number'
@@ -161,7 +162,7 @@ export default function Home() {
                                 />
                             </label>
 
-                            <label className='flex flex-col text-white'>
+                            <label className='flex flex-col items-center p-4 rounded bg-white/5 border border-white/10 text-white'>
                                 Break (minutes)
                                 <input
                                     type='number'
@@ -175,19 +176,22 @@ export default function Home() {
                                 />
                             </label>
                         </div>
-                        <div className='flex flex-wrap gap-2'>
-                            <button
-                                className='px-4 py-1.5 rounded-full bg-white/5 border border-white/10 text-white font-medium hover:bg-white/10 transition-colors'
-                                onClick={() =>
-                                    setShowMeditation((prev) => {
-                                        if (!prev) setShowPomodoroTimer(false);
-                                        return !prev;
-                                    })
-                                }
-                            >
-                                {showMeditation ? 'Hide Meditation Breather' : 'Show Meditation Breather'}
-                            </button>
-                        </div>
+                    </div>
+
+                    <hr className='my-4 border-white/10' />
+
+                    <div className='flex flex-wrap gap-2 justify-center text-sm'>
+                        <button
+                            className='px-4 py-1.5 rounded-full bg-white/5 border border-white/10 text-white font-medium hover:bg-white/10 transition-colors'
+                            onClick={() =>
+                                setShowMeditation((prev) => {
+                                    if (!prev) setShowPomodoroTimer(false);
+                                    return !prev;
+                                })
+                            }
+                        >
+                            {showMeditation ? 'Hide Meditation Breather' : 'Show Meditation Breather'}
+                        </button>
                     </div>
 
                     <hr className='my-4 border-white/10' />
@@ -217,7 +221,7 @@ export default function Home() {
                     <hr className='my-4 border-white/10' />
 
                     {/* Ko-fi Button */}
-                    <div className='mt-4 flex flex-col gap-2 justify-center items-center w-[20%] mx-auto'>
+                    <div className='mt-4 flex flex-col gap-2 justify-center items-center md:w-[20%] mx-auto'>
                         <p className='text-center'>
                             Do you want to say
                             <br />
