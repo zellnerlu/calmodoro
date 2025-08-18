@@ -1,12 +1,4 @@
-// Type definitions
-type Sound = {
-    title: string;
-    mp3: string;
-    attribution: string;
-};
-
-type CategorySounds = Record<string, Sound>;
-type Bib = Record<string, CategorySounds>;
+import { Bib, Preset } from './types';
 
 export const images = [
     {
@@ -36,6 +28,27 @@ export const images = [
         text: 'Enjoy the appearance and calmness of water.',
         attribution:
             'Photo by <a href="https://unsplash.com/@jdiegoph?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Diego PH</a> on <a href="https://unsplash.com/wallpapers/nature/sky?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a> ',
+    },
+    {
+        id: 'cottage',
+        title: 'Cozy Cottage',
+        text: 'Calm down in a cozy cottage.',
+        attribution:
+            'Photo by <a href="https://unsplash.com/@claybanks?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Clay Banks</a> on <a href="https://unsplash.com/photos/a-living-room-with-a-wood-burning-stove-in-it-kNFOoORtrys?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>',
+    },
+    {
+        id: 'cafe',
+        title: 'Cozy Cafe',
+        text: 'Drink a cup of coffee in a cozy cafe.',
+        attribution:
+            'Photo by <a href="https://unsplash.com/@pinchebesu?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Ruben Ramirez</a> on <a href="https://unsplash.com/photos/brown-wooden-table-and-chairs-xhKG01FN2uk?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>',
+    },
+    {
+        id: 'library',
+        title: 'Library',
+        text: 'Reduce stress while reading a book.',
+        attribution:
+            'Photo by <a href="https://unsplash.com/@jonathan_francisca?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Jonathan Francisca</a> on <a href="https://unsplash.com/photos/brown-and-blue-desk-globe-in-library-BpbkLACP64M?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>',
     },
 ];
 
@@ -88,12 +101,12 @@ export const bib: Bib = {
         },
     },
     topping: {
-        keyboardtyping: {
+        keyboard_typing: {
             title: 'Keyboard Typing',
             mp3: 'https://assets.mixkit.co/active_storage/sfx/2537/2537-preview.mp3',
             attribution: 'mixkit.co',
         },
-        pageturning: {
+        page_turning: {
             title: 'Page Turning',
             mp3: 'https://assets.mixkit.co/active_storage/sfx/1097/1097-preview.mp3',
             attribution: 'mixkit.co',
@@ -115,3 +128,93 @@ export const bib: Bib = {
         },
     },
 };
+
+export const presets: Preset[] = [
+    {
+        id: 'forest',
+        title: 'Forest Chill',
+        bg: 'forest',
+        selection: { ambient: 'piano', nature: '', topping: 'walking_on_leaves' },
+        volume: { ambient: 0.1, nature: 0.0, topping: 0.3 },
+    },
+    {
+        id: 'morning_meditation',
+        title: 'Morning Meditation',
+        bg: 'sky',
+        selection: { ambient: 'meditation', nature: 'birds', topping: '' },
+        volume: { ambient: 0.3, nature: 0.2, topping: 0 },
+        // Could add a soft bell or chime here for nicer meditation start
+    },
+    {
+        id: 'rainy_night',
+        title: 'Rainy Night',
+        bg: 'river',
+        selection: { ambient: 'motivation', nature: 'rain', topping: 'keyboard_typing' },
+        volume: { ambient: 0.2, nature: 0.5, topping: 0.1 },
+        // Could add thunder cracks for more realism
+    },
+    {
+        id: 'woodland_walk',
+        title: 'Woodland Walk',
+        bg: 'forest',
+        selection: { ambient: 'piano', nature: 'owl', topping: 'walking_on_leaves' },
+        volume: { ambient: 0.2, nature: 0.2, topping: 0.3 },
+        // Could add wind rustling sounds
+    },
+    {
+        id: 'seaside_relax',
+        title: 'Seaside Relax',
+        bg: 'beach',
+        selection: { ambient: '', nature: 'sea_waves', topping: 'page_turning' },
+        volume: { ambient: 0.5, nature: 0.3, topping: 0.1 },
+        // Could add distant seagull calls for extra flavor
+    },
+    {
+        id: 'library_focus',
+        title: 'Library Focus',
+        bg: 'library',
+        selection: { ambient: 'piano', nature: '', topping: 'page_turning' },
+        volume: { ambient: 0.3, nature: 0, topping: 0.2 },
+        // Could add soft murmurs for realism
+    },
+    {
+        id: 'stormy_evening',
+        title: 'Stormy Evening',
+        bg: 'cottage',
+        selection: { ambient: 'motivation', nature: 'rain_on_umbrella', topping: '' },
+        volume: { ambient: 0.2, nature: 0.5, topping: 0.3 },
+        // Could add distant thunder for intensity
+    },
+    {
+        id: 'quiet_river',
+        title: 'Quiet River',
+        bg: 'river',
+        selection: { ambient: 'meditation', nature: 'sea_waves', topping: 'wooden_ship_on_water' },
+        volume: { ambient: 0.2, nature: 0.2, topping: 0.2 },
+        // Adding frogs/cicadas could make it more natural
+    },
+    {
+        id: 'morning_breeze',
+        title: 'Morning Breeze',
+        bg: 'forest',
+        selection: { ambient: 'piano', nature: 'birds', topping: 'wave_splashing' },
+        volume: { ambient: 0.2, nature: 0.3, topping: 0.1 },
+        // Could add wind through trees for extra ambiance
+    },
+    {
+        id: 'cozy_cafe',
+        title: 'Cozy Café',
+        bg: 'cafe',
+        selection: { ambient: 'motivation', nature: '', topping: 'keyboard_typing' },
+        volume: { ambient: 0.2, nature: 0, topping: 0.3 },
+        // Adding coffee machine sounds or light chatter could improve the vibe
+    },
+    {
+        id: 'ocean_dream',
+        title: 'Ocean Dream',
+        bg: 'beach',
+        selection: { ambient: '', nature: 'rain', topping: 'wave_splashing' },
+        volume: { ambient: 0.4, nature: 0.2, topping: 0.2 },
+        // Could add distant boat horns or gulls for depth
+    },
+];

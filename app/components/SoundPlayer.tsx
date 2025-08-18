@@ -1,12 +1,15 @@
 'use client';
 
 import { useState, useRef, useEffect, ChangeEvent } from 'react';
+import { Preset, SelectionState, VolumeState } from '../types';
 import { bib } from '../constants';
+import PresetSelector from './PresetSelector';
 
-type SelectionState = Record<string, string>;
-type VolumeState = Record<string, number>;
+type SetBackgroundProps = {
+    setBg: (id: string) => void;
+};
 
-export default function SoundPlayer() {
+export default function SoundPlayer({ setBg }: SetBackgroundProps) {
     const [selection, setSelection] = useState<SelectionState>({
         ambient: '',
         nature: '',
@@ -92,6 +95,34 @@ export default function SoundPlayer() {
         setVolume({ ...volume, [cat]: parseFloat(e.target.value) });
     };
 
+    const handlePresetSelect = (preset: Preset) => {
+        // Reset
+        setSelection({ ambient: '', nature: '', topping: '' });
+        setVolume({ ambient: 0.5, nature: 0.5, topping: 0.5 });
+        setIsPlaying({ ambient: false, nature: false, topping: false });
+        Object.entries(audioRefs.current).forEach(([cat, audio]) => {
+            if (audio) {
+                audio.pause();
+                audio.currentTime = 0;
+                audioRefs.current[cat] = null;
+            }
+        });
+        shouldPlay.current = { ambient: false, nature: false, topping: false };
+
+        setSelection(preset.selection);
+        setVolume(preset.volume);
+        setBg(preset.bg);
+
+        // Start playing all non-empty selections
+        Object.entries(preset.selection).forEach(([cat, key]) => {
+            if (!key) return; // skip empty
+
+            shouldPlay.current[cat] = true; // mark as should play
+            initAudio(cat, key); // initialize and autoplay
+            setIsPlaying((prev) => ({ ...prev, [cat]: true }));
+        });
+    };
+
     const togglePlayPause = (cat: string) => {
         const key = selection[cat];
         if (!key) return;
@@ -128,6 +159,7 @@ export default function SoundPlayer() {
 
     return (
         <div className='space-y-8'>
+            <PresetSelector onSelectPreset={handlePresetSelect} />
             {Object.keys(bib).map((cat) => (
                 <div key={cat} className='bg-white/5 backdrop-blur-md rounded-xl p-4 shadow-md border border-white/10'>
                     <h2 className='font-semibold text-lg mb-4 text-white tracking-wide'>

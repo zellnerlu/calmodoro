@@ -8,6 +8,7 @@ import { images } from './constants';
 import { useOverlayOpenStore } from './store/store';
 import KoFiButton from './components/KoFiButton';
 import Image from 'next/image';
+import BackgroundSelector from './components/BackgroundSelector';
 
 export default function Home() {
     const [bg, setBg] = useState('beach');
@@ -105,32 +106,13 @@ export default function Home() {
                 </button>
 
                 <div className='max-w-5xl mx-auto px-4 sm:px-8 py-8'>
-                    <h2 className='text-3xl font-semibold mb-6'>🎨 Select Your Theme</h2>
+                    <h2 className='text-3xl font-semibold mb-6'>Select Your Theme</h2>
 
-                    {/* Background cards */}
-                    <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6'>
-                        {images.map((bgItem) => (
-                            <div
-                                key={bgItem.id}
-                                className='group rounded-xl overflow-hidden border border-white/10 bg-white/5 hover:bg-white/10 transition transform hover:-translate-y-1 hover:shadow-lg cursor-pointer'
-                                onClick={() => setBg(bgItem.id)}
-                            >
-                                <img
-                                    src={`/images/thumbnails/${bgItem.id}.jpg`}
-                                    alt={bgItem.title}
-                                    className='w-full h-40 object-cover transition-transform duration-300 group-hover:scale-105'
-                                />
-                                <div className='p-4'>
-                                    <h5 className='font-bold'>{bgItem.title}</h5>
-                                    <p className='text-sm text-white/70'>{bgItem.text}</p>
-                                </div>
-                            </div>
-                        ))}
-                    </div>
+                    <BackgroundSelector images={images} setBg={setBg} />
 
                     <div className='my-8 border-t border-white/10'></div>
 
-                    <SoundPlayer />
+                    <SoundPlayer setBg={setBg} />
 
                     <div className='my-4 border-t border-white/10'></div>
 
@@ -145,7 +127,7 @@ export default function Home() {
                                 })
                             }
                         >
-                            {showPomodoroTimer ? 'Hide Pomodoro Timer' : 'Show Pomodoro Timer'}
+                            {showPomodoroTimer ? '⏸ Hide Pomodoro Timer' : '▶ Show Pomodoro Timer'}
                         </button>
 
                         <div className='flex gap-4'>
@@ -191,7 +173,7 @@ export default function Home() {
                                 })
                             }
                         >
-                            {showMeditation ? 'Hide Meditation Breather' : 'Show Meditation Breather'}
+                            {showMeditation ? '⏸ Hide Meditation Breather' : '▶ Show Meditation Breather'}
                         </button>
                         <div className='flex gap-4'>
                             <label className='flex flex-col items-center p-4 rounded bg-white/5 border border-white/10 text-white'>
