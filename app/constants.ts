@@ -32,7 +32,7 @@ export const images = [
     {
         id: 'cottage',
         title: 'Cozy Cottage',
-        text: 'Calm down in a cozy cottage.',
+        text: 'Relax in a cozy cottage.',
         attribution:
             'Photo by <a href="https://unsplash.com/@claybanks?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Clay Banks</a> on <a href="https://unsplash.com/photos/a-living-room-with-a-wood-burning-stove-in-it-kNFOoORtrys?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>',
     },
