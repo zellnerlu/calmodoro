@@ -39,7 +39,7 @@ export const images = [
     {
         id: 'cafe',
         title: 'Calming Café',
-        text: 'Drink a cup of coffee in a cozy café.',
+        text: 'Drink a cup of coffee in a calming café.',
         attribution:
             'Photo by <a href="https://unsplash.com/@pinchebesu?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Ruben Ramirez</a> on <a href="https://unsplash.com/photos/brown-wooden-table-and-chairs-xhKG01FN2uk?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>',
     },
